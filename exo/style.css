@@ -67,3 +67,29 @@ body h1 {
 #green {
     background-color: green;
 }
+#ball {
+    width:8vh;
+    height:8vh;
+    border-radius: 50%;
+    background: linear-gradient(red, purple, blue);
+    margin-bottom: 1rem;
+}
+.move {
+    transform: translateX(20vh);
+}
+.move2 {
+    animation-name : appear;
+    animation-delay: 0.5s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes appear {
+    from {
+        
+    }
+    to {
+        transform:translateX(80vh)
+        translatey(-80vh)
+        rotate(360deg);
+    }
+}

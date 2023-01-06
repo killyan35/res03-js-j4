@@ -1,6 +1,3 @@
-window.addEventListener("DOMContentLoaded", function(){
-    // tout le reste de mon script
-
 function exercice1()
 {
     let btn = document.getElementById("btn-change-color");
@@ -11,7 +8,6 @@ function exercice1()
     ex1.style.backgroundColor = "blue";
 });
 }
-exercice1();
 function exercice2()
 {
     let btn = document.getElementById("btn-move");
@@ -23,8 +19,6 @@ function exercice2()
     
 });
 }
-exercice2();
-
 function exercice3()
 {
     let ingredients = ["Salade", "Tomate", "Oignon"];
@@ -47,7 +41,6 @@ function exercice3()
     
 });
 }
-exercice3();
 function exercice4()
 {
     let heroes = [
@@ -65,28 +58,77 @@ function exercice4()
         }
     ];
     let btn = document.getElementById("btn-add-hero");
+    
     btn.addEventListener("click", function(event){
-        
-        let ul = document.querySelector("ul:first-of-type");
-        
-        for(let i = 0; i < heroes.length; i++)
-    {  
-       let li = document.createElement("li");
-       let txt = document.createTextNode(ingredients[i]);
-       li.appendChild(txt);
-       ul.appendChild(li);
-    }
-        
+      
+      if (heroes.length > 0)
+        {
+            let td = document.createElement("td");
+            let td2 = document.createElement("td");
+            let tr = document.createElement("tr");
+            let txt = document.createTextNode(heroes[0].name);
+            let txt2 = document.createTextNode(heroes[0].secret);
+            let table = document.querySelector("table > tbody");
+            td.appendChild(txt);
+            td2.appendChild(txt2);
+            tr.appendChild(td);
+            tr.appendChild(td2);
+            table.appendChild(tr);
+                    
+        }
+       if (heroes.length > 0)
+        {
+            heroes.shift();
+                    
+        }
+     
     });
+    
+    
 }
-
 function exercice5()
 {
-
+    let btn = document.getElementById("btn-turn");
+    
+    btn.addEventListener("click", function(){
+        
+        let blue = document.getElementById("blue");
+        let red = document.getElementById("red");
+        let green = document.getElementById("green");
+      
+        blue.id ="red";
+        red.id ="green";
+        green.id ="blue";
+        
+    });
+    
 }
-
 function exercice6()
 {
-
+    let btn = document.getElementById("btn-roll");
+    
+    btn.addEventListener("click", function(event){
+    
+    let ball = document.getElementById("ball");
+    ball.classList.add("move2");
+    console.log(ball);
+    
+});
 }
+window.addEventListener("DOMContentLoaded", function(){
+    // tout le reste de mon script
+
+
+exercice1();
+
+exercice2();
+
+
+exercice3();
+
+exercice4();
+
+exercice5();
+
+exercice6();
 });
